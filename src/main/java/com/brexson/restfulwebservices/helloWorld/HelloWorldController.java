@@ -18,13 +18,12 @@ public class HelloWorldController {
         this.messageSource = messageSource;
     }
     @GetMapping(path = "/hello-world")
-    @ResponseBody
     public String helloWorld() {
         return "Hello World";
     }
     @GetMapping(path = "/hello-world-bean")
     public HelloWorldBean helloWorldBean() {
-        return new HelloWorldBean("Hello World");
+        return new HelloWorldBean("Hello World Bean v1");
     }
     // Path Parameters
     // /users/{id}/todos/{id}  => /users/2/todos/200
