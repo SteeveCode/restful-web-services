@@ -4,6 +4,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
@@ -17,6 +18,7 @@ public class HelloWorldController {
         this.messageSource = messageSource;
     }
     @GetMapping(path = "/hello-world")
+    @ResponseBody
     public String helloWorld() {
         return "Hello World";
     }

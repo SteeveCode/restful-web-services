@@ -9,13 +9,12 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class SpringSecurityConfiguration {
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 ////		1) All requests should be authenticated
         http.authorizeHttpRequests(
-                auth -> auth.anyRequest().authenticated()
+                auth -> auth.anyRequest().permitAll()
         );
 //		2) If a request is not authenticated, a web page is shown (we chose a popup instead with http basic)
         http.httpBasic(withDefaults()); // import static method org.springframework.security.config.Customizer.withDefaults
